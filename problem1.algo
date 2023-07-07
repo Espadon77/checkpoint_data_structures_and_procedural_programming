@@ -1,0 +1,31 @@
+
+array_name : sum_of_distinct_elements[set1, set2];
+
+ALGORITHM Problem1
+VAR
+    distinct_elements = []
+    total_sum = 0
+BEGIN
+# Iterate over elements in set1
+    FOR element in set1:
+        IF element not in distinct_elements:
+            distinct_elements.append(element)
+            total_sum += element
+    END_IF
+    END_FOR
+# Iterate over elements in set2
+    FOR element in set2:
+        IF element not in distinct_elements:
+            distinct_elements.append(element)
+            total_sum += element
+            return total_sum
+    END_IF
+    END_FOR
+
+# Example usage:
+set1 = [3, 1, 7, 9]
+set2 = [2, 4, 1, 9, 3]
+result = sum_of_distinct_elements(set1, set2)
+print(result)  # Output: 13
+
+END

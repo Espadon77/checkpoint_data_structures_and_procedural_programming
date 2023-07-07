@@ -1,0 +1,45 @@
+
+PROCEDURE procedure dot_product(v1, v2)
+VAR
+    ps := 0
+BEGIN
+    FOR i := 0 TO length(v1) - 1 DO
+        ps := ps + v1[i] * v2[i]
+
+algorithm check_orthogonal_with_procedure(vectors)
+    n := length(vectors)
+    FOR i := 0 to n - 1 DO
+        v1 := vectors[i][0]
+        v2 := vectors[i][1]
+        dot_product(v1, v2)
+        IF ps = 0 THEN
+            output "Vectors", v1, "and", v2, "are orthogonal"
+        ELSE
+            output "Vectors", v1, "and", v2, "are not orthogonal"
+    END_IF
+    END_FOR
+
+END
+
+FUNCTION function dot_product(v1, v2)
+VAR
+    ps := 0
+BEGIN
+    FOR i := 0 TO length(v1) - 1 DO
+        ps := ps + v1[i] * v2[i]
+    return ps
+
+algorithm check_orthogonal_with_function(vectors)
+    n := length(vectors)
+    FOR i := 0 TO n - 1 DO
+        v1 := vectors[i][0]
+        v2 := vectors[i][1]
+        ps := dot_product(v1, v2)
+    IF ps = 0 then
+            output "Vectors", v1, "and", v2, "are orthogonal"
+    ELSE
+            output "Vectors", v1, "and", v2, "are not orthogonal"
+    END_IF
+    END_FOR
+
+END
